@@ -24,7 +24,6 @@ class Grade extends Model
             $this->passed_at = null;
         }
 
-
         $this->save();
     }
 

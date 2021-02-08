@@ -1,26 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>FAQ</title>
-    <link rel="stylesheet"  type="text/css" href="css\style.css">
-</head>
-<body>
+@extends ('layout')
 
-<div class="topnav">
+@section('header')
+@endsection
 
-  <a href="/">Home </a>
-
-    <div class="topnav-right">
-       <a href="profiel">Profiel</a>
-      <a href="dashboard">Dashboard</a>
-      <a href="profession">Profession</a>
-      <a href="motivation">My motivation</a>
-      <a href="faq" class="active">FAQ</a>
-    </div>
-
-
-  </div>
+@section('content')
   <img class="middenfoto" src="img\codebackground.jpg">
   <div class="tekstvak1">
 
@@ -35,7 +18,4 @@
         </ul>
 
     </div>
-
-
-</body>
-</html>
+      @endsection

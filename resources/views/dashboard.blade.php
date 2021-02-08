@@ -1,25 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dashboard</title>
-    <link rel="stylesheet"  type="text/css" href="css\style.css">
-</head>
-<body>
+@extends ('layout')
 
-<div class="topnav"> 
-   
-  <a href="/">Home </a>
-    
-    <div class="topnav-right">
-       <a href="profiel">Profiel</a>
-      <a href="dashboard" class="active">Dashboard</a>
-      <a href="profession">Profession</a>
-      <a href="motivation">My motivation</a>
-      <a href="faq">FAQ</a>
-    </div>
-    
-  </div>
+@section('header')
+@endsection
+
+@section('content')
   <img class="middenfoto" src="img\codebackground.jpg">
   <div class="tekstvak1">
     <h1 class="titel">Study Monitor</h1>
@@ -61,7 +45,7 @@
         <tr>
           <td>Project</td>
           <td>-</td>
-          
+
         </tr>
         <tr>
           <td>Professional Skills 1</td>
@@ -147,7 +131,7 @@
           <td>-</td>
         </tr>
 
-        
+
         <tr>
           <td>IT Personality</td>
           <td style="background-color: orange;">2.5</td>
@@ -162,7 +146,7 @@
         <td style="background-color: black;"></td>
       </tr>
 
-      
+
       <tr>
         <td rowspan="3">Totale EC</td>
         <td style="text-align:center; background-color: greenyellow;">Gehaald</td>
@@ -175,15 +159,15 @@
           <td style="text-align:center; background-color: orange;">Nog te doen</td>
           <td style="background-color: black;"></td>
           <td style="background-color: black;"></td>
-         
-         
+
+
         </tr>
 
         <tr>
           <td style="text-align:center; background-color: red;">Niet gehaald</td>
           <td style="background-color: black;"></td>
           <td style="background-color: black;"></td>
-          
+
         </tr>
       </table>
 
@@ -195,7 +179,6 @@
             <p><a href="https://teams.microsoft.com/_#/school//?ctx=teamsGrid">Teams environment of the study programme</p>
               <p><a href="https://apps.hz.nl/angular/studievoortgang/studiestatus">Page in MyHZ with your study progress</p>
                 <p><a href="https://github.com/Lucvanwesten2003/Lucvanwesten2003.github.io">Github enivronment of the study programme</p>
-      
+
       </div>
-</body>
-</html>
+@endsection

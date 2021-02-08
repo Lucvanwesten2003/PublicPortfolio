@@ -1,26 +1,9 @@
-  
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Profession</title>
-    <link rel="stylesheet"  type="text/css" href="css\style.css">
-</head>
-<body>
+@extends ('layout')
 
-<div class="topnav"> 
-   
-  <a href="/">Home </a>
-    
-    <div class="topnav-right">
-       <a href="profiel">Profiel</a>
-      <a href="dashboard">Dashboard</a>
-      <a href="profession" class="active">Profession</a>
-      <a href="motivation">My motivation</a>
-      <a href="faq">FAQ</a>
-    </div>
-    
-  </div>
+@section('header')
+@endsection
+
+@section('content')
   <img class="middenfoto" src="img\codebackground.jpg">
   <div class="tekstvak1">
     <h1 class="titelProffesion">Profession</h1>
@@ -180,7 +163,6 @@
     <p><a href="https://www.amazon.jobs/en/">https://www.amazon.jobs/en/</a></p>
     </div>
     </div>
-  
 
-</body>
-</html>
+
+@endsection
