@@ -4,12 +4,16 @@
 @endsection
 
 @section('content')
-  <img class="middenfoto" src="img\codebackground.jpg">
+  <img class="middenfoto" src="/img\codebackground.jpg">
   <div class="tekstvak1">
     <h1 class="titelProffesion">Profession</h1>
     <hr>
+      @foreach($articles as $article)
+          <p><a href="/articles/{{ $article->id }}">{{ $article->title}}</a></p>
+      <p>{{ $article->excerpt}}</p>
+      @endforeach
     <div class="macaw">
-    <img src="img\macaw-logo.jpg" height="200px" class="macawimg">
+    <img src="/img\macaw-logo.jpg" height="200px" class="macawimg">
     <p class="theory">Macaw doet aan Digital Marketing & Commerce, Data Analytics & AI, Business Applications, en maakt deze applicaties dus voor bedrijven Macaw wil graag een oplossing zoeken voor hun problemen met behulp van IT.</p>
     <table class="professionTable">
       <tr>
@@ -39,7 +43,7 @@
       </tbody>
     </table>
     <hr>
-    <img src="img\veracode.png" height="200px" class="macawimg">
+    <img src="/img\veracode.png" height="200px" class="macawimg">
     <p class="theory">Veracode is een software security bedrijf en werkt met andere bedrijven samen om hun security beter te maken op hun applicaties en in algemeen het risico verlagen van een security breach.</p>
     <table class="professionTable">
       <tr>
@@ -69,7 +73,7 @@
       </tbody>
     </table>
     <hr>
-    <img src="img\yoursurprise.png" height="200px" class="macawimg">
+    <img src="/img\yoursurprise.png" height="200px" class="macawimg">
     <p class="theory">Yoursuprise maakt gepersonaliseerde cadeaus, en is located in Zierikzee en door middel van AI kunnen ze voorspellen hoeveel producten zo moeten inkopen.</p>
     <table class="professionTable">
       <tr>
@@ -95,7 +99,7 @@
       </tbody>
     </table>
     <hr>
-    <img src="img\booking.png" height="200px" class="macawimg">
+    <img src="/img\booking.png" height="200px" class="macawimg">
   <p class="theory">Booking.com is een website waar je gemakkelijk je vakantie kan plannen, bookings is HQ is located in Amsterdam.</p>
   <table class="professionTable">
     <tr>
@@ -125,7 +129,7 @@
     </tbody>
   </table>
   <hr>
-  <img src="img\amazon.png" height="200px" class="macawimg">
+  <img src="/img\amazon.png" height="200px" class="macawimg">
   <p class="theory">Amazon is een gigantische online webshop maar heeft ook web services(AWS) waar een groot deel van het internet gebruikt van maakt. Sinds dit jaar is Amazon beschikbaar in Nederland.</p>
   <table class="professionTable">
     <tr>

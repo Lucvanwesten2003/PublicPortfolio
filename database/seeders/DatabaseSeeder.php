@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Http\Controllers\ArticlesController;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder

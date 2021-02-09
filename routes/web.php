@@ -8,6 +8,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfessionController;
 use App\Http\Controllers\MotivationController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\ArticlesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,9 @@ Route::get('/dashboard', [DashboardController::class, 'show']);
 
 Route::get('/profession', [ProfessionController::class, 'show']);
 
+Route::get('/articles/{article}', [ArticlesController::class, 'show']);
+
 Route::get('/motivation', [MotivationController::class, 'show']);
 
 Route::get('/faq', [FaqController::class, 'show']);
+

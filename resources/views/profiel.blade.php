@@ -43,5 +43,11 @@
     <div class="desc">Shaw Shank Redemption</div>
   </div>
 
-</div>
+
+    @foreach($articles as $article)
+          <p><a href="/articles/{{ $article->id}}">{{ $article->title}}</a></p>
+    <p>{{ $article->excerpt}}</p>
+    <p>{{ $article->body}}</p>
+    @endforeach
+  </div>
     @endsection
