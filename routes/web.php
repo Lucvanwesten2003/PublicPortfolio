@@ -50,9 +50,14 @@ Route::get('/dashboard', [DashboardController::class, 'show']);
 
 Route::get('/profession', [ProfessionController::class, 'show']);
 
+Route::get('/articles/create', [ArticlesController::class, 'create']);
+Route::post('/articles', [ArticlesController::class, 'store']);
 Route::get('/articles/{article}', [ArticlesController::class, 'show']);
+Route::get('/articles', [ArticlesController::class, 'index']);
 
 Route::get('/motivation', [MotivationController::class, 'show']);
 
 Route::get('/faq', [FaqController::class, 'show']);
+Route::post('/faq', [FaqController::class, 'store']);
+Route::get('/faq/create', [FaqController::class, 'create']);
 

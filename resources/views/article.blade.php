@@ -12,7 +12,8 @@
         <div class="vraag1">
 
                 <p>{{ $article->title}}</p>
-                <p>{{ $article->body}}</p>
+                <p style="width: 80%; word-wrap:break-word; display:inline-block;">{{ $article->body}}</p>
+        </div>
 
         </div>
 @endsection
