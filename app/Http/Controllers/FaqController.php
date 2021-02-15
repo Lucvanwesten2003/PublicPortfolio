@@ -9,13 +9,14 @@ use App\Models\Faq;
 class FaqController extends Controller
 {
     public function index(){
-        //render a list of resource
-    }
-
-    public function show(){
-        // show single resource
         return view('faq', [
             'posts' => Faq::all()
+        ]);
+    }
+
+    public function show($id){
+        return view('singleFaq', [
+            'faq' => Faq::find($id)
         ]);
     }
 
@@ -33,15 +34,25 @@ class FaqController extends Controller
 
     }
 
-    public function edit(){
-        //show a view to edit an existing resource
+    public function edit($id){
+        $faq = Faq::find($id);
+        return view('faqEditor', compact('faq'));
     }
 
-    public function update(){
-        //persist the edited resource
+    public function update($id){
+        $faq = Faq::find($id);
+
+        $faq->question = \request('question');
+        $faq->answer = \request('answer');
+        $faq->save();
+
+        return redirect('/faq');
     }
 
-    public function destroy(){
-        // Delete the resource
+    public function destroy($id){
+        $faq = Faq::find($id);
+        $faq->delete();
+
+        return redirect('/faq');
     }
 }
