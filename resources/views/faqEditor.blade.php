@@ -10,7 +10,7 @@
         <h1 class="titel">Edit a FAQ</h1>
         <hr>
         <div class="vraag1">
-            <form method="POST" action="/faq/{{ $faq->id }}">
+            <form method="POST" action="{{ $faq->path() }}">
                 @csrf
                 @method("PUT")
                 <label for="Question">Question:</label><br>

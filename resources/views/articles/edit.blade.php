@@ -10,7 +10,7 @@
         <h1 class="titel">Edit Article</h1>
         <hr>
         <div class="vraag1">
-            <form method="POST" action="/articles/{{ $article->id }}">
+            <form method="POST" action="{{ $article->path() }}">
                 @csrf
                 @method('PUT')
                 <label for="title">Title:</label><br>

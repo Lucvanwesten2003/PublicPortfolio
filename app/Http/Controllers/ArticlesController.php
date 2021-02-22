@@ -14,9 +14,9 @@ class ArticlesController extends Controller
         ]);
     }
 
-    public function show($id){
+    public function show(Article $article){
         return view('articles.show', [
-            'article' => Article::find($id)
+            'article' => $article
         ]);
     }
 
@@ -24,31 +24,34 @@ class ArticlesController extends Controller
         return view('articles.create');
     }
 
-    public function store(){
-        $article= new Article();
-        $article->title = \request('title');
-        $article->excerpt = \request('excerpt');
-        $article->body = \request('body');
-        $article->save();
+
+//    public function store(){
+//        Article::create($this->validateArticle());
+//
+//        return redirect('/articles');
+//    }
+
+    public function store(Request $request){
+        Article::create($this->validateArticle($request));
 
         return redirect('/articles');
     }
 
-    public function edit($id){
-        $article = Article::find($id);
+    public function edit(Article $article){
         return view('articles.edit', compact('article'));
     }
 
-    public function update($id){
-        $article = Article::find($id);
+    public function update(Article $article, Request $request){
+        $article->update($this->validateArticle($request));
 
-        $article->title = \request('title');
-        $article->excerpt = \request('excerpt');
-        $article->body = \request('body');
-        $article->save();
-
-        return redirect('/articles/' . $article->id);
+        return redirect($article->path());
     }
+
+//    public function update(Article $article){
+//        $article->update($this->validateArticle());
+//
+//        return redirect($article->path());
+//    }
 
     public function destroy($id){
         $article = Article::find($id);
@@ -56,5 +59,14 @@ class ArticlesController extends Controller
         $article->delete();
 
         return redirect('/articles');
+    }
+
+    public function validateArticle(Request $request)
+    {
+        return $request->validate([
+            'title' => 'required',
+            'excerpt' => 'required',
+            'body' => 'required'
+        ]);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use Illuminate\Http\Request;
 
 use App\Models\Faq;
@@ -14,9 +15,9 @@ class FaqController extends Controller
         ]);
     }
 
-    public function show($id){
+    public function show(Article $article){
         return view('singleFaq', [
-            'faq' => Faq::find($id)
+            'faq' => $article
         ]);
     }
 
@@ -24,27 +25,19 @@ class FaqController extends Controller
         return view('createFaq');
     }
 
-    public function store(){
-        $faq = new Faq();
-        $faq->question = \request('question');
-        $faq->answer = \request('answer');
-        $faq->save();
+    public function store(Request $request){
+        Faq::create($this->validateFaq($request));
 
         return redirect('/faq');
 
     }
 
-    public function edit($id){
-        $faq = Faq::find($id);
+    public function edit(Faq $faq){
         return view('faqEditor', compact('faq'));
     }
 
-    public function update($id){
-        $faq = Faq::find($id);
-
-        $faq->question = \request('question');
-        $faq->answer = \request('answer');
-        $faq->save();
+    public function update(Faq $faq, Request $request){
+        $faq->update($this->validateFaq($request));
 
         return redirect('/faq');
     }
@@ -54,5 +47,14 @@ class FaqController extends Controller
         $faq->delete();
 
         return redirect('/faq');
+    }
+
+
+    public function validateFaq(Request $request)
+    {
+        return $request->validate([
+            'question' => 'required',
+            'answer' => 'required'
+        ]);
     }
 }

@@ -28,4 +28,10 @@ use Illuminate\Database\Eloquent\Model;
 class Faq extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
+
+    public function path(){
+        return route('faq.show', $this);
+    }
 }

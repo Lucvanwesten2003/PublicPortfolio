@@ -11,7 +11,7 @@
         <hr>
         <div class="vraag1">
             @foreach($articles as $article)
-                <p><a href="/articles/{{ $article->id }}">{{ $article->title}}</a></p>
+                <p><a href="{{ $article->path() }}">{{ $article->title}}</a></p>
             <p style="width: 80%; word-wrap:break-word; display:inline-block;">{{ $article->body}}</p>
                 @endforeach
         </div>
