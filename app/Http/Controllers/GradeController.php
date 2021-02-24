@@ -10,76 +10,75 @@ class GradeController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     *
      */
     public function index()
     {
-        //
+        return view('grades.index', [
+            'grades' => Grade::latest()->get()
+        ]);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     *
      */
     public function create()
     {
-        //
+        return view('grades.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param \Illuminate\Http\Request $request
+     *
      */
     public function store(Request $request)
     {
-        //
+        Grade::create($this->validateGrade($request));
+
+        return redirect('/grades');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Grade  $grade
-     * @return \Illuminate\Http\Response
+     * @param \App\Models\Grade $grade
      */
     public function show(Grade $grade)
     {
-        //
+        return view('grades.show', compact('grade'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Grade  $grade
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit(Grade $grade)
     {
-        //
+        return view('grades.edit', compact('grade'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Grade  $grade
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Grade $grade)
-    {
-        //
+
+    public function update(Request $request, Grade $grade){
+        $grade->update($this->validateGrade($request));
+
+        return redirect($grade->path());
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Grade  $grade
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Grade $grade)
     {
-        //
+        $grade->delete();
+
+        return redirect('/grades');
+    }
+
+    public function validateGrade(Request $request)
+    {
+        return $request->validate([
+            'blok' => 'required',
+            'course_name' => 'required',
+            'EC' => 'required',
+            'best_grade' => 'required|numeric|between:0,10'
+        ]);
     }
 }

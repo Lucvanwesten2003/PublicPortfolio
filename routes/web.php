@@ -9,6 +9,7 @@ use App\Http\Controllers\ProfessionController;
 use App\Http\Controllers\MotivationController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\ArticlesController;
+use App\Http\Controllers\GradeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,6 +51,7 @@ Route::get('/dashboard', [DashboardController::class, 'show']);
 
 Route::get('/profession', [ProfessionController::class, 'show']);
 
+Route::resource('/grades', GradeController::class);
 
 Route::resource('/articles', ArticlesController::class);
 //

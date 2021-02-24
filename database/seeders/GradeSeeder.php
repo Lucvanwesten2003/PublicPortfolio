@@ -4,11 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-use App\Models\Grade;
-
 class GradeSeeder extends Seeder
 {
-
     /**
      * Run the database seeds.
      *
@@ -17,12 +14,12 @@ class GradeSeeder extends Seeder
     public function run()
     {
         \DB::table('grades')->insert([
-           [
-               'blok' => 1,
-               'EC' => 2.5,
-               'course_name' => 'Program & Career Orientation',
-               'best_grade' => 6.7
-           ],
+            [
+                'blok' => 1,
+                'EC' => 2.5,
+                'course_name' => 'Program & Career Orientation',
+                'best_grade' => 6.7
+            ],
             [
                 'blok' => 1,
                 'EC' => 7.5,
