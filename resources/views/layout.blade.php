@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/html">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home</title>
+    <title>@yield('title')</title>
     <link rel="stylesheet"  type="text/css" href="/css\style.css">
 
 </head>
