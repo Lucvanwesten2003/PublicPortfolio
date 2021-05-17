@@ -9,6 +9,10 @@ use App\Models\Faq;
 
 class FaqController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth')->except(['show', 'index']);
+    }
+    
     public function index(){
         return view('faq', [
             'posts' => Faq::all()

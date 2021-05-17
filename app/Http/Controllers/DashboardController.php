@@ -10,7 +10,7 @@ class DashboardController extends Controller
 {
 
     public function show(){
-        return view('dashboard', [
+        return view('grades', [
             'grades' => Grade::all(),
             'totalEC' => $this->calculate()
         ]);

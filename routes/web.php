@@ -22,32 +22,19 @@ use App\Http\Controllers\GradeController;
 |
 */
 
-// Route::get('/posts/{post}',  function($post){
-//     $posts = [
-//         'my-first-post' => 'Hello, this is my first blog post!',
-//         'my-second-post' => 'Now I am getting the hang of this blogging thing.'
-//     ];
+Route::get('/', function () {
+    return view('welcome');
+});
 
-//     if (!array_key_exists($post, $posts)) {
-//         abort(404, 'Sorry, that post was not found.');
-//     }
-
-//     return view('post', [
-//         'post' => $posts[$post]
-//     ]);
-// });
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
 Route::get('/posts/{post}', [PostController::class, 'show']);
 
 Route::get('/',[WelcomeController::class, 'show']);
 
 Route::get('/profiel', [ProfielController::class, 'show']);
-
-Route::get('/dashboard', [DashboardController::class, 'show']);
 
 Route::get('/profession', [ProfessionController::class, 'show']);
 
@@ -66,11 +53,5 @@ Route::resource('/articles', ArticlesController::class);
 Route::get('/motivation', [MotivationController::class, 'show']);
 
 Route::resource('/faq', FaqController::class);
-//Route::get('/faq', [FaqController::class, 'index']);
-//Route::post('/faq', [FaqController::class, 'store']);
-//Route::get('/faq/create', [FaqController::class, 'create']);
-//Route::get('/faq/{faq}', [FaqController::class, 'show']);
-//Route::get('/faq/{faq}/edit', [FaqController::class, 'edit']);
-//Route::put('/faq/{faq}', [FaqController::class, 'update']);
-//Route::delete('/faq/{faq}', [FaqController::class, 'destroy']);
 
+require __DIR__.'/auth.php';

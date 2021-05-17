@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class ArticlesController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth')->except(['show', 'index']);
+    }
+    
     public function index(){
         return view('articles.index', [
             'articles' => Article::latest()->get()
