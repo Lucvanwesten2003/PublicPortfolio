@@ -1,1 +1,1 @@
-web: vendor/bin/heroku-php-apache2 public/
+web: vendor/bin/laravel-portfolio-assignment-Lucvanwesten2003 public/
