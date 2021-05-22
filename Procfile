@@ -1,1 +1,0 @@
-web: vendor/bin/laravel-portfolio-assignment-Lucvanwesten2003 public/
