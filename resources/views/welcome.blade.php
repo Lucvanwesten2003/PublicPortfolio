@@ -10,7 +10,7 @@
     <hr style="width: 40%;">
     <p class="tekst1" style="font-size: 1.6em; font-weight: normal;">-Het HBO niveau past bij mij omdat ik van de HAVO kom dus HBO is de volgende logische stap</p>
     <ul>
-        <li style="font-size: 1.6em; font-weight: normal;">-ICT past bij mijn personaliteit omdat ik eigenlijk altijd al met computers bezig ben geweest.</li>
+        <li style="font-size: 1.6em; font-weight: normal;">-ICT test123 past bij mijn personaliteit omdat ik eigenlijk altijd al met computers bezig ben geweest.</li>
         <li style="font-size: 1.6em; font-weight: normal;">Ik vondt het vak informatica op de HAVO ook leuk dus dat is ook een reden.</li>
     </ul>
 
