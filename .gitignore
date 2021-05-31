@@ -1,6 +1,8 @@
 # Created by https://www.toptal.com/developers/gitignore/api/laravel,phpstorm+all
 # Edit at https://www.toptal.com/developers/gitignore?templates=laravel,phpstorm+all
 
+.env
+
 ### Laravel ###
 /vendor/
 node_modules/

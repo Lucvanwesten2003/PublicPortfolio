@@ -78,9 +78,9 @@ class GradeController extends Controller
     public function validateGrade(Request $request)
     {
         return $request->validate([
-            'blok' => 'required',
+            'blok' => 'required|numeric',
             'course_name' => 'required',
-            'EC' => 'required',
+            'EC' => 'required|numeric',
             'best_grade' => 'required|numeric|between:0,10'
         ]);
     }
