@@ -27,13 +27,16 @@
                             @else style="background-color: red"
                             @endif>{{ $grade->EC}}</td>
                         <td>{{ $grade->best_grade}}</td>
+                        @if(Auth::check())
                         <td>
+                            <button onclick="location.href = '{{ url('grades/'.$grade->id.'/edit')}}'">Edit</button>
                         <form method="POST" action="{{ $grade->path() }}">
                             @csrf
                             @method('DELETE')
                             <button type="submit">Delete</button>
                         </form>
                         </td>
+                        @endif
                     </tr>
                 @endforeach
             </table>
