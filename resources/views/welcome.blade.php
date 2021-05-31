@@ -6,7 +6,7 @@
 @section('content')
 <img class="middenfoto" src="img\codebackground.jpg">
 <div class="tekstvak1">
-    <h1 class="titel" style="font-size: 3em;">HBO-ICT</h1>
+    <h1 class="titel" style="font-size: 3em;">HBO-ICT Veranderd</h1>
     <hr style="width: 40%;">
     <p class="tekst1" style="font-size: 1.6em; font-weight: normal;">-Het HBO niveau past bij mij omdat ik van de HAVO kom dus HBO is de volgende logische stap</p>
     <ul>
