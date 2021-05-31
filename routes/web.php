@@ -22,7 +22,7 @@ use App\Http\Controllers\GradeController;
 |
 */
 if (App::environment('production')) {
-    URL::forceScheme('https');
+    \URL::forceScheme('https');
 }
 
 Route::get('/', function () {
